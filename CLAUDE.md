@@ -144,7 +144,7 @@ Ideas para después: Python ejecutable en el navegador con Pyodide; para C++, un
 - GitHub Actions (`.github/workflows/ci.yml`) corre lint, tipos y pruebas en cada PR y en cada push a `main`.
 - `main` está protegida: exige PR y el check `checks` en verde, sin aprobaciones, y la regla también aplica al dueño del repo.
 - TypeScript está fijado en `~6.0.0` porque `typescript-eslint` todavía no soporta TS 7. Subir de versión cuando lo soporte.
-- `src/algorithms/smoke.test.ts` solo comprueba que Vitest corre. Se borra cuando exista `bubbleSort.test.ts`.
-- **Siguiente: hito 1**, `bubbleSort.ts` como generador de eventos con sus pruebas.
+- **Hito 1 terminado.** `bubbleSort.ts` emite eventos `compare` y `swap`, y sus pruebas reconstruyen el resultado aplicando esos eventos.
+- **Siguiente: hito 2**, `ArrayBars` para dibujar un arreglo fijo.
 
 Mantener esta sección actualizada al terminar cada hito.
