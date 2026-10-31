@@ -1,9 +1,9 @@
 name: CI
 
 on:
-  pull_request:
+  pull_request: # se dispara con un PR
   push:
-    branches: [main] # cuando se haga un PR a main
+    branches: [main] # al llegar a main, se confirma que este bien
 
 jobs:
   checks:
