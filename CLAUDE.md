@@ -138,17 +138,13 @@ Ideas para después: Python ejecutable en el navegador con Pyodide; para C++, un
 - Un commit = un cambio lógico.
 - Opcional: un issue por hito (el PR lo cierra con `Closes #N`), un milestone "Fase 1" y protección de `main` (solo vía PR con checks en verde).
 
-## Estado actual (28 oct. 2026)
+## Estado actual (30 oct. 2026)
 
-- Repo de GitHub creado y enlazado. El remoto se renombró de `main` a `origin` y la rama de `master` a `main`.
-- Entorno: Node 24, npm 11 y `gh` CLI instalados.
-- **Hito 0, paso 0.1 en curso:** el proyecto ya se generó con `npm create vite@latest . -- --template react-ts`, con ESLint como linter.
-  - Pendiente: `npm install`, verificar que corre con `npm run dev` (http://localhost:5173).
-  - Después, explicarle al autor qué es cada archivo generado.
-  - Luego, hacer el **commit inicial directo en `main`** y el primer `push`.
-- Siguientes pasos del hito 0:
-  - 0.2: rama `chore/setup` para crear la estructura de carpetas, agregar Vitest y limpiar la plantilla de Vite. Primer PR.
-  - 0.3: GitHub Action con lint, tipos y pruebas, en el mismo PR.
-  - 0.4: conectar Vercel y proteger `main`.
+- **Hito 0 terminado.** La app está desplegada en Vercel, que publica cada push a `main` y genera previews por PR.
+- GitHub Actions (`.github/workflows/ci.yml`) corre lint, tipos y pruebas en cada PR y en cada push a `main`.
+- `main` está protegida: exige PR y el check `checks` en verde, sin aprobaciones, y la regla también aplica al dueño del repo.
+- TypeScript está fijado en `~6.0.0` porque `typescript-eslint` todavía no soporta TS 7. Subir de versión cuando lo soporte.
+- `src/algorithms/smoke.test.ts` solo comprueba que Vitest corre. Se borra cuando exista `bubbleSort.test.ts`.
+- **Siguiente: hito 1**, `bubbleSort.ts` como generador de eventos con sus pruebas.
 
 Mantener esta sección actualizada al terminar cada hito.
