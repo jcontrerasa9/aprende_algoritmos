@@ -138,13 +138,14 @@ Ideas para después: Python ejecutable en el navegador con Pyodide; para C++, un
 - Un commit = un cambio lógico.
 - Opcional: un issue por hito (el PR lo cierra con `Closes #N`), un milestone "Fase 1" y protección de `main` (solo vía PR con checks en verde).
 
-## Estado actual (30 oct. 2026)
+## Estado actual (1 nov. 2026)
 
 - **Hito 0 terminado.** La app está desplegada en Vercel, que publica cada push a `main` y genera previews por PR.
 - GitHub Actions (`.github/workflows/ci.yml`) corre lint, tipos y pruebas en cada PR y en cada push a `main`.
 - `main` está protegida: exige PR y el check `checks` en verde, sin aprobaciones, y la regla también aplica al dueño del repo.
 - TypeScript está fijado en `~6.0.0` porque `typescript-eslint` todavía no soporta TS 7. Subir de versión cuando lo soporte.
 - **Hito 1 terminado.** `bubbleSort.ts` emite eventos `compare` y `swap`, y sus pruebas reconstruyen el resultado aplicando esos eventos.
-- **Siguiente: hito 2**, `ArrayBars` para dibujar un arreglo fijo.
+- **Hito 2 terminado.** `ArrayBars` dibuja con SVG el arreglo que recibe por props. Por ahora `App` le pasa un arreglo fijo.
+- **Siguiente: hito 3**, `usePlayer` y controles para animar los eventos.
 
 Mantener esta sección actualizada al terminar cada hito.
