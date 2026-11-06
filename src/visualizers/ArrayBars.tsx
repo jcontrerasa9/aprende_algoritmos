@@ -2,7 +2,7 @@ const WIDTH = 600
 const HEIGHT = 300
 
 type ArrayBarsProps = {
-  values: readonly number[]
+  values: readonly number[] // dice que el prop tiene que ser un arreglo de numeros y no se modificará
 }
 
 function ArrayBars({ values }: ArrayBarsProps) {
@@ -11,11 +11,11 @@ function ArrayBars({ values }: ArrayBarsProps) {
 
   return (
     <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} width="100%"> {/* el (0, 0) queda en la esquina superior izq*/}
-      {values.map((value, index) => {
+      {values.map((value, index) => { // recorre cada numero 
         const barHeight = value / max * HEIGHT // la mayor ocupa todo el lienzo, el resto son proporcionales
 
         return (
-          <rect
+          <rect // dibuja cada rectangulo
             key={index}
             x={index * barWidth}
             y={HEIGHT - barHeight}
@@ -25,7 +25,7 @@ function ArrayBars({ values }: ArrayBarsProps) {
           />
         )
       })}
-    </svg>
+    </svg> // es el lienzo
   )
 }
 
